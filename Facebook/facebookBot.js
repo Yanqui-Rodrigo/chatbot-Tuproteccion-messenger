@@ -327,10 +327,15 @@ switch(action){
     sendTextMessage(sender, "Usted debe pagar "+total+"soles de mascarillas color "+colorMascarilla);
   break;
   case  "testposta.info":
+    
     console.log(parameters);
     let palabra1 = parameters.fields.texto1.stringValue;
     let palabra2 = parameters.fields.texto2.stringValue;
-    sendTextMessage(sender,palabra1+palabra2);
+    if(!(palabra1===""||palabra2==="")){
+
+      sendTextMessage(sender,palabra1+palabra2);
+    }
+   
   break;
 }
 
