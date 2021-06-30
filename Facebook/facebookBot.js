@@ -120,7 +120,7 @@ async function receivedMessage(event) {
 }
 
 async function saveUserData(facebookId) {
-  let isRegistered = await findOne({ facebookId });
+  /*let isRegistered = await findOne({ facebookId });
   if (isRegistered) return;
   let userData = await getUserData(facebookId);
   let chatbotUser = new ChatbotUser({
@@ -132,8 +132,17 @@ async function saveUserData(facebookId) {
   chatbotUser.save((err, res) => {
     if (err) return console.log(err);
     console.log("Se creo un usuario:", res);
-  });
+  });*/
+  let userData = await getUserData(facebookId);
+  let textodemuestra = userData.first_name+userData.last_name;
+  
+  console.log(textodemuestra, res);
 }
+
+
+
+
+
 
 function handleMessageAttachments(messageAttachments, senderId) {
   //for now just reply
@@ -336,13 +345,13 @@ switch(action){
          // let userData2 =  getUserData(facebookId);
          // console.log( userData2.first_name);
           sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
-          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":"{first_name}","Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
+          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":"usuario","Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
         }
         if(colorMascarilla==="negro"){
           var total = cantidadMascarilla*10;
          //let userData =  getUserData(senderId);
           sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
-          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":senderid,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
+          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":"usuario","Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
         }
        
       }
