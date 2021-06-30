@@ -314,7 +314,7 @@ function handleDialogFlowResponse(sender, response) {
   let action = response.action;
   let contexts = response.outputContexts;
   let parameters = response.parameters;
-  let  nombre = response.lastName;
+
 switch(action){
  case  "comprarmascarilla.imput":
     console.log(parameters);
@@ -340,9 +340,9 @@ switch(action){
         }
         if(colorMascarilla==="negro"){
           var total = cantidadMascarilla*10;
-         // let userData = await getUserData(recipientId);
+         let userData =  getUserData(senderId);
           sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
-          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":nombre,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
+          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":userData.first_name,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
         }
        
       }
