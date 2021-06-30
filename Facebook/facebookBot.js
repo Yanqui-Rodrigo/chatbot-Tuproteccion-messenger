@@ -321,13 +321,26 @@ switch(action){
     
     let colorMascarilla = parameters.fields.color_mascarilla.stringValue;
     var cantidadMascarilla = parameters.fields.cantidad_mascarilla.numberValue;
+    let idtransaccion = Date.now();
       if(!(colorMascarilla===""||cantidadMascarilla==null)){
-
-        var total = cantidadMascarilla*6;
-        let idtransaccion = Date.now();
-        
-        sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
-        axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":"Rodrigo Yanqui","Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"})
+      
+      
+        if(colorMascarilla=="ocre"){
+          var total = cantidadMascarilla*7;
+          sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
+          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":first_name +" "+last_name,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
+        }
+        if(colorMascarilla=="blanco"){
+          var total = cantidadMascarilla*7;
+          sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
+          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":first_name +" "+last_name,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
+        }
+        if(colorMascarilla=="negro"){
+          var total = cantidadMascarilla*10;
+          sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
+          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":first_name +" "+last_name,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
+        }
+       
       }
 
   break;
