@@ -319,12 +319,15 @@ switch(action){
  case  "comprarmascarilla.imput":
     console.log(parameters);
     
-    let colorMascarilla = parameters.fields.color.stringValue;
-    let cantidadMascarilla = parameters.fields.cantidad.stringValue;
+    let colorMascarilla = parameters.fields.color_mascarilla.stringValue;
+    let cantidadMascarilla = parameters.fields.cantidad_mascarilla.numberValue;
+      if(!colorMascarilla===""||cantidadMascarilla===""){
 
-    var total = parseInt(cantidadMascarilla)*6;
+        var total = cantidadMascarilla*6;
 
-    sendTextMessage(sender, "Usted debe pagar "+total+"soles de mascarillas color "+colorMascarilla);
+        sendTextMessage(sender, "Usted debe pagar "+total+"soles de mascarillas color "+colorMascarilla);
+      }
+      sendTextMessage(sender,colorMascarilla+cantidadMascarilla);
   break;
   case  "testposta.info":
     
