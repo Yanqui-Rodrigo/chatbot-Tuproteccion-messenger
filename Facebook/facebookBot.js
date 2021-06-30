@@ -319,8 +319,8 @@ switch(action){
  case  "comprarmascarilla.imput":
     console.log(parameters);
     
-    let colorMascarilla = parameters.fields.color;
-    let cantidadMascarilla = parameters.fields.cantidad;
+    let colorMascarilla = parameters.fields.color.stringValue;
+    let cantidadMascarilla = parameters.fields.cantidad.stringValue;
 
     var total = parseInt(cantidadMascarilla)*6;
 
