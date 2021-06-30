@@ -333,7 +333,7 @@ switch(action){
         }
         if(colorMascarilla==="blanco"){
           var total = cantidadMascarilla*7;
-          let userData2 = await getUserData(facebookId);
+          let userData2 =  getUserData(facebookId);
           console.log( userData2.first_name);
           sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
           axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":userData2.first_name,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
