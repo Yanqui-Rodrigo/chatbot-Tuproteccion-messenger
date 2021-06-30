@@ -326,7 +326,7 @@ switch(action){
         var total = cantidadMascarilla*6;
 
         sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
-        axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"data":{"id":"1231243","Nombres":"Rodrigo Yanqui","Producto":"Mascarilla","Tipo":"blanco","Cantidad":"3","Precio":"4","Total":"12","Estado":"Pendiente"}})
+        axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":"1231243","Nombres":"Rodrigo Yanqui","Producto":"Mascarilla","Tipo":"blanco","Cantidad":"3","Precio":"4","Total":"12","Estado":"Pendiente"})
       }
 
   break;
