@@ -328,6 +328,9 @@ switch(action){
   break;
   case  "testposta.info":
     console.log(parameters);
+    let palabra1 = parameters.fields.testo.stringValue;
+    let palabra2 = parameters.fields.testo2.stringValue;
+    sendTextMessage(sender,palabra1+palabra2);
   break;
 }
 
