@@ -318,7 +318,7 @@ function handleDialogFlowResponse(sender, response) {
 switch(action){
  case  "comprarmascarilla.imput":
     console.log(parameters);
-    console.log(contexts);
+    
     let colorMascarilla = parameters.fields.color;
     let cantidadMascarilla = parameters.fields.cantidad;
 
