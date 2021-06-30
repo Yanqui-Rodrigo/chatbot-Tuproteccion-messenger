@@ -318,6 +318,13 @@ function handleDialogFlowResponse(sender, response) {
 switch(action){
  case  "comprarmascarilla.imput":
     console.log(parameters);
+    console.log(contexts);
+    let colorMascarilla = parameters.fields.color;
+    let cantidadMascarilla = parameters.fields.cantidad;
+
+    var total = parseInt(cantidadMascarilla)*6;
+
+    sendTextMessage(sender, "Usted debe pagar "+total+"soles de mascarillas color "+colorMascarilla);
   break;
   case  "testposta.info":
     console.log(parameters);
