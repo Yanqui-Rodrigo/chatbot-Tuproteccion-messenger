@@ -315,6 +315,15 @@ function handleDialogFlowResponse(sender, response) {
   let contexts = response.outputContexts;
   let parameters = response.parameters;
 
+switch(action){
+ case  "comprarmascarilla.imput":
+    console.log(parameters);
+  break;
+  case  "testposta.info":
+    console.log(parameters);
+  break;
+}
+
   sendTypingOff(sender);
 
   if (isDefined(action)) {
