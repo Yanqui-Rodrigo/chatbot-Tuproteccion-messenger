@@ -320,12 +320,12 @@ switch(action){
     console.log(parameters);
     
     let colorMascarilla = parameters.fields.color_mascarilla.stringValue;
-    let cantidadMascarilla = parameters.fields.cantidad_mascarilla.numberValue;
-      if(!(colorMascarilla===""||cantidadMascarilla==undefined)){
+    var cantidadMascarilla = parameters.fields.cantidad_mascarilla.numberValue;
+      if(!(colorMascarilla===""||cantidadMascarilla===undefined)){
 
         var total = cantidadMascarilla*6;
 
-        sendTextMessage(sender, "Usted debe pagar "+total+"soles de mascarillas color "+colorMascarilla);
+        sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
       }
       sendTextMessage(sender,colorMascarilla+cantidadMascarilla);
   break;
