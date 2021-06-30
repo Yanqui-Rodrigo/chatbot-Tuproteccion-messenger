@@ -321,7 +321,7 @@ switch(action){
     
     let colorMascarilla = parameters.fields.color_mascarilla.stringValue;
     var cantidadMascarilla = parameters.fields.cantidad_mascarilla.numberValue;
-      if(!(colorMascarilla===""||cantidadMascarilla==null)){
+      if(!(colorMascarilla===""||cantidadMascarilla==="undefined")){
 
         var total = cantidadMascarilla*6;
 
