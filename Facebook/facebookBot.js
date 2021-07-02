@@ -146,7 +146,8 @@ async function saveUserData(facebookId) {
 
 function handleMessageAttachments(messageAttachments, senderId) {
   //for now just reply
-  sendTextMessage(senderId, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdjunto");
+  
+  sendTextMessage(senderId, "ARCHIVO ATTACHMENT : "+messageAttachments);
 }
 
 async function setSessionAndUser(senderId) {
