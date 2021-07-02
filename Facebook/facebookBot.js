@@ -328,7 +328,7 @@ function handleDialogFlowResponse(sender, response) {
 switch(action){
  case  "comprarmascarilla.imput":
     console.log(parameters);
-    
+    let userData = await getUserData(sender);
     let colorMascarilla = parameters.fields.color_mascarilla.stringValue;
     var cantidadMascarilla = parameters.fields.cantidad_mascarilla.numberValue;
     let idtransaccion = Date.now();
@@ -337,7 +337,7 @@ switch(action){
       
         if(colorMascarilla==="ocre"){
           var total = cantidadMascarilla*7;
-         // let userData = await getUserData(sender);
+         // 
          // let messagedatanombre = userData.first_name;
           sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
           axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":sender,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
