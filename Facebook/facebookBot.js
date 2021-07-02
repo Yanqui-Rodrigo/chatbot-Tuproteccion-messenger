@@ -136,7 +136,7 @@ async function saveUserData(facebookId) {
   let userData = await getUserData(facebookId);
   let textodemuestra = " ESTE ES UN TEXTO DE "+userData.first_name+userData.last_name;
   
-  console.log(textodemuestra, res);
+  console.log(textodemuestra);
 }
 
 
@@ -146,7 +146,7 @@ async function saveUserData(facebookId) {
 
 function handleMessageAttachments(messageAttachments, senderId) {
   //for now just reply
-  
+  console.log(messageAttachments);
   sendTextMessage(senderId, "ARCHIVO ATTACHMENT : "+messageAttachments);
 }
 
