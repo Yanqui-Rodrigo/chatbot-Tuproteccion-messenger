@@ -134,7 +134,7 @@ async function saveUserData(facebookId) {
     console.log("Se creo un usuario:", res);
   });*/
   let userData = await getUserData(facebookId);
-  let textodemuestra = userData.first_name+userData.last_name;
+  let textodemuestra = " ESTE ES UN TEXTO DE "+userData.first_name+userData.last_name;
   
   console.log(textodemuestra, res);
 }
@@ -146,7 +146,7 @@ async function saveUserData(facebookId) {
 
 function handleMessageAttachments(messageAttachments, senderId) {
   //for now just reply
-  sendTextMessage(senderId, "Archivo adjunto recibido... gracias! .");
+  sendTextMessage(senderId, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdjunto");
 }
 
 async function setSessionAndUser(senderId) {
