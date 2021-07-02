@@ -325,10 +325,9 @@ async function handleDialogFlowResponse(sender, response) {
   let contexts = response.outputContexts;
   let parameters = response.parameters;
   let userData = await getUserData(sender);
-  let prueba1 = " ESTE ES LA PRUEBA 1"+userData.first_name; 
-  console.log(prueba1);
-  let prueba2 = " ESTE ES LA PRUEBA 2"+userData; 
-  console.log(prueba2);
+  let nombrepersona = userData.first_name+" "+userData.last_name; 
+  console.log(nombrepersona);
+
 switch(action){
  case  "comprarmascarilla.imput":
     console.log(parameters);
@@ -343,19 +342,19 @@ switch(action){
           var total = cantidadMascarilla*7;
         
           sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
-          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":sender,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
+          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":nombrepersona,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
         }
         if(colorMascarilla==="blanco"){
           var total = cantidadMascarilla*7;
          
           sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
-          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":sender,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
+          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":nombrepersona,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
         }
         if(colorMascarilla==="negro"){
           var total = cantidadMascarilla*10;
          //let userData =  getUserData(senderId);
           sendTextMessage(sender, "Usted debe pagar "+total+" soles de mascarillas color "+colorMascarilla);
-          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":sender,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
+          axios.post("https://sheet.best/api/sheets/22ea581b-8ea8-4ea9-a10f-8747fd6dab75",{"id":idtransaccion,"Nombres":nombrepersona,"Producto":"Mascarilla","Tipo":colorMascarilla,"Cantidad":cantidadMascarilla,"Precio":"6","Total":total,"Estado":"Pendiente"});
         }
        
       }
