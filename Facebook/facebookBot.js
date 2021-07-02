@@ -318,7 +318,7 @@ async function sendToDialogFlow(senderId, messageText) {
   }
 }
 
-function handleDialogFlowResponse(sender, response) {
+async function handleDialogFlowResponse(sender, response) {
   let responseText = response.fulfillmentMessages.fulfillmentText;
   let messages = response.fulfillmentMessages;
   let action = response.action;
