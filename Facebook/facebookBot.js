@@ -325,7 +325,10 @@ async function handleDialogFlowResponse(sender, response) {
   let contexts = response.outputContexts;
   let parameters = response.parameters;
   let userData = await getUserData(sender);
-  console.log(userData.data);
+  let prueba1 = " ESTE ES LA PRUEBA 1"+userData.first_name; 
+  console.log(prueba1);
+  let prueba2 = " ESTE ES LA PRUEBA 2"+userData; 
+  console.log(prueba2);
 switch(action){
  case  "comprarmascarilla.imput":
     console.log(parameters);
